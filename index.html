@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasmitha Vuduthanaboina · Portfolio</title>
+<meta name="description" content="Vuduthanaboina Jasmitha — Software Engineer, Full Stack & Frontend Developer. B.Tech CSE (Networks), KITS Warangal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, assured, early-career software engineer — modelled on her reference portfolio
+   IDEA: a quiet network at night — a glass ID card for her, orbited by linked nodes (she studies networks)
+   PICTURE: her portrait on a frosted card inside slow orbit rings with travelling nodes
+   COLOUR and TYPE: deep slate-teal night, sage accent, soft mist blue support; Inter + Instrument Serif italic
+   LAYOUT: hero card + intro, then about, tools, experience, projects, LinkedIn, certifications, education, contact */
+:root{color-scheme:dark;--bg:#0d171c;--bg2:#111e25;--card:#15242c;--line:#233740;--ink:#e9f1f3;--mute:#9fb3ba;--sage:#86cbbd;--mist:#9cc2d6;--glow:rgba(134,203,189,.16)}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.1;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.02em}
+h2 em,h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--sage)}
+h3{font-size:19px}
+.wrap{max-width:1160px;margin:0 auto}
+.band{padding:clamp(56px,8vw,104px) max(5vw,16px)}
+.alt{background:var(--bg2)}
+.kick{color:var(--sage);font-size:14px;font-weight:600;margin-bottom:10px}
+.lead{color:var(--mute);max-width:62ch;margin:14px 0 40px}
+/* nav */
+nav{position:sticky;top:0;z-index:9;background:rgba(13,23,28,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font:italic 22px 'Instrument Serif',serif;text-decoration:none}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;font-size:15px;color:var(--mute)}
+nav ul a:hover,nav ul a:focus-visible{color:var(--ink);background:var(--card)}
+.navcta{padding:10px 16px;border-radius:99px;border:1px solid var(--sage);color:var(--sage);text-decoration:none;font-weight:600;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 500px at 75% 30%,rgba(156,194,214,.14),transparent 60%),radial-gradient(700px 500px at 10% 90%,var(--glow),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(21,36,44,.7);padding:7px 14px;border-radius:99px;font-size:14px;color:var(--mute)}
+.pill b{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px var(--glow)}
+.hero h1{font-size:clamp(44px,6.4vw,80px);letter-spacing:-.03em;margin:22px 0 10px;line-height:1}
+.hero h1 em{display:block;font-size:1.05em}
+.roles{color:var(--mist);font-size:15px;font-weight:500;margin:18px 0 16px}
+.roles span{color:var(--line);margin:0 8px}
+.hero p.intro{color:var(--mute);font-size:17px;max-width:54ch;margin:0 0 30px}
+.hero p.intro strong{color:var(--ink);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:99px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);transition:transform .15s,border-color .15s;cursor:pointer;font-size:15px;color:var(--ink)}
+.btn:hover{transform:translateY(-2px);border-color:var(--sage)}
+.btn.solid{background:var(--sage);color:#0d171c;border-color:var(--sage)}
+.btn svg{width:18px;height:18px;flex:none}
+.stage{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.stage svg.orb{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orb ellipse{fill:none;stroke:rgba(156,194,214,.28);stroke-width:1.5}
+.orb .n{fill:var(--sage)}.orb .m{fill:var(--mist)}
+.idcard{position:absolute;left:50%;top:50%;width:62%;aspect-ratio:4/5;transform:translate(-50%,-50%) rotate(-3deg);border-radius:26px;overflow:hidden;border:1px solid rgba(233,241,243,.18);box-shadow:0 40px 80px rgba(0,0,0,.45),0 0 0 8px rgba(21,36,44,.6)}
+.idcard img{display:block}
+.crop{position:absolute;max-width:none;height:auto}
+.cbox{position:relative;overflow:hidden;display:block}
+.idcard .cap{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(13,23,28,.92));display:flex;justify-content:space-between;align-items:end;gap:8px}
+.cap strong{display:block;font-size:15px}.cap small{color:var(--mute);font-size:13px}
+.cap i{font:italic 26px 'Instrument Serif',serif;color:var(--sage)}
+.stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:40px}
+.stats div{font-size:14px;color:var(--mute)}.stats strong{display:block;font-size:26px;color:var(--ink);font-weight:600}
+/* about */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.box h3{margin-bottom:10px}.box p{margin:0;color:var(--mute)}
+.num{font:italic 30px 'Instrument Serif',serif;color:var(--sage);display:block;margin-bottom:8px}
+/* tools */
+.tools{display:flex;flex-wrap:wrap;gap:10px}
+.tool{padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-weight:500;font-size:15px}
+.tool small{color:var(--mute);font-weight:400;margin-left:6px}
+/* experience */
+.exp{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
+.tl{display:grid;gap:18px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative}
+.job .when{color:var(--sage);font-size:14px;font-weight:600}
+.job h3{margin:6px 0 2px}
+.job .org{color:var(--mist);font-size:15px;margin-bottom:12px}
+.job ul{margin:0;padding-left:18px;color:var(--mute)}.job li{margin:5px 0}
+.job a.more{display:inline-flex;margin-top:12px;color:var(--sage);font-weight:600;text-decoration:none;min-height:40px;align-items:center}
+.job a.more:hover{text-decoration:underline}
+.photo{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--card);position:sticky;top:96px}
+.photo img{display:block}
+.photo figcaption{padding:14px 18px;color:var(--mute);font-size:14px}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--sage);transform:translateY(-3px)}
+.proj .k{color:var(--sage);font-size:13px;font-weight:600}
+.proj p{margin:0;color:var(--mute);flex:1}
+.proj.wide{grid-column:1/-1;background:linear-gradient(135deg,#17303a,var(--card))}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;padding:5px 12px;border-radius:99px;background:rgba(134,203,189,.1);color:var(--sage)}
+.go{display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-weight:600;text-decoration:none;min-height:44px}
+.go:hover{color:var(--sage)}
+/* linkedin */
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.post .hd{display:flex;align-items:center;gap:12px}
+.post .hd .cbox{width:44px;height:44px;border-radius:50%;flex:none}
+.post .hd strong{display:block;font-size:15px}.post .hd small{color:var(--mute);font-size:13px}
+.post h3{font-size:17px}
+.post p{margin:0;color:var(--mute);font-size:15px;flex:1}
+.li{display:inline-flex;align-items:center;gap:8px;color:var(--mist);font-weight:600;text-decoration:none;min-height:44px}
+.li svg{width:18px;height:18px}
+.li:hover{color:var(--ink)}
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.cert{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.cert small{color:var(--sage);font-weight:600;font-size:13px}
+.cert h3{font-size:16px;margin-top:6px;line-height:1.3}
+/* education */
+.edu{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.edu .badge{width:64px;height:64px;border-radius:18px;background:rgba(134,203,189,.12);display:grid;place-items:center;color:var(--sage)}
+.edu .badge svg{width:32px;height:32px}
+.edu p{margin:4px 0 0;color:var(--mute)}
+.gpa{text-align:right}.gpa strong{display:block;font-size:32px}.gpa small{color:var(--mute)}
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(34px,5vw,56px)}
+.contact .lead{margin:16px auto 32px}
+.contact .btns{justify-content:center}
+.mail{display:block;margin-top:22px;color:var(--mute);font-size:15px}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px;padding:26px max(5vw,16px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+@media(max-width:960px){.hero .wrap,.exp{grid-template-columns:minmax(0,1fr)}.posts,.trio{grid-template-columns:minmax(0,1fr)}.certs{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{position:static;max-width:520px}.stage{max-width:440px}}
+@media(max-width:700px){nav ul{display:none}.grid{grid-template-columns:minmax(0,1fr)}.edu{grid-template-columns:minmax(0,1fr)}.gpa{text-align:left}}
+@media(max-width:420px){.certs{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.orb animateMotion{display:none}html{scroll-behavior:auto}.btn,.proj{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top" aria-label="Home">J</a>
+  <ul>
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li><li><a href="#posts">Posts</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="navcta resume-link" href="#contact">Resume</a>
+</div></nav>
+
+<header class="hero band" id="top"><div class="wrap">
+  <div>
+    <span class="pill"><b></b>Open to SDE roles · Hyderabad, India</span>
+    <h1>Vuduthanaboina <em>Jasmitha.</em></h1>
+    <div class="roles">Software Engineer<span>·</span>Full Stack &amp; Frontend Developer<span>·</span>Problem Solver</div>
+    <p class="intro">Computer Science (Networks) graduate-to-be from KITS Warangal and Associate Software Engineer Intern at <strong>CodeplixAI</strong>. I build clean, reliable web apps with <strong>React, TypeScript, Node.js, Python (FastAPI) and MySQL</strong>, and I'm CCNA-certified.</p>
+    <div class="btns">
+      <a class="btn solid" href="#work">View my work</a>
+      <a class="btn resume-link" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></svg>Resume</a>
+      <a class="btn" href="https://www.linkedin.com/in/vuduthanaboina-jasmitha-987029300/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div><strong>8.04</strong>CGPA, B.Tech CSE</div>
+      <div><strong>3</strong>Internships</div>
+      <div><strong>8+</strong>Certifications</div>
+    </div>
+  </div>
+  <div class="stage">
+    <svg class="orb" viewBox="0 0 500 500" aria-hidden="true">
+      <ellipse id="o1" cx="250" cy="250" rx="240" ry="92" transform="rotate(-24 250 250)"/>
+      <ellipse id="o2" cx="250" cy="250" rx="228" ry="150" transform="rotate(32 250 250)"/>
+      <circle class="n" r="9"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#o1"/></animateMotion></circle>
+      <circle class="m" r="6"><animateMotion dur="19s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1"><mpath href="#o2"/></animateMotion></circle>
+      <circle class="m" r="5"><animateMotion dur="11s" begin="-5s" repeatCount="indefinite"><mpath href="#o2"/></animateMotion></circle>
+    </svg>
+    <div class="idcard">
+      <img class="crop" src="WhatsApp%20Image%202026-11-21%20at%205.47.22%20PM.jpeg" alt="Portrait of Vuduthanaboina Jasmitha" style="width:252.63%;left:-71.05%;top:-63.16%">
+      <div class="cap"><div><strong>B.Tech CSE (Networks)</strong><small>KITS Warangal · Class of 2026</small></div><i>VJ</i></div>
+    </div>
+  </div>
+</div></header>
+
+<section class="band" id="about"><div class="wrap">
+  <div class="kick">About</div>
+  <h2>A little <em>about me</em></h2>
+  <p class="lead">I enjoy building practical software that removes friction from people's work, and I like understanding how every layer fits together, from the network up to the interface.</p>
+  <div class="trio">
+    <div class="box"><span class="num">01</span><h3>My journey</h3><p>I started in Computer Science with a Networks specialisation at KITS Warangal and earned my CCNA. Full-stack internships pulled me into web development, and today I build frontend integrations at CodeplixAI.</p></div>
+    <div class="box"><span class="num">02</span><h3>What I'm into</h3><p>Frontend development and API integration, full-stack web apps, and applied AI/ML. With my background in networking and cybersecurity, I also think about how systems talk to each other and stay secure.</p></div>
+    <div class="box"><span class="num">03</span><h3>How I work</h3><p>I keep code modular and maintainable, validate inputs carefully, and debug patiently. I learn best by shipping real features and reflecting on what each one taught me.</p></div>
+  </div>
+</div></section>
+
+<section class="band alt" id="skills"><div class="wrap">
+  <div class="kick">Skills</div>
+  <h2>Tools I <em>work with</em></h2>
+  <p class="lead">Languages, frameworks and tools from my internships and projects.</p>
+  <div class="tools" id="tools"></div>
+</div></section>
+
+<section class="band" id="experience"><div class="wrap">
+  <div class="kick">Experience</div>
+  <h2>Where I've <em>worked</em></h2>
+  <p class="lead">Internships where I've built real features with real teams.</p>
+  <div class="exp">
+    <div class="tl" id="jobs"></div>
+    <figure class="photo"><span class="cbox" style="aspect-ratio:620/760"><img class="crop" src="WhatsApp%20Image%202026-11-21%20at%205.47.22%20PM.jpeg" alt="Jasmitha at the CodeplixAI office" style="width:154.84%;left:-48.39%;top:-15.79%"></span><figcaption>At the CodeplixAI office (formerly S3Connections), Hyderabad</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band alt" id="work"><div class="wrap">
+  <div class="kick">Work</div>
+  <h2>Things I've <em>built</em></h2>
+  <p class="lead">Selected work from my internship and personal projects.</p>
+  <div class="grid" id="projects"></div>
+</div></section>
+
+<section class="band" id="posts"><div class="wrap">
+  <div class="kick">LinkedIn</div>
+  <h2>From my <em>LinkedIn</em></h2>
+  <p class="lead">Posts where I've written about what I built and learned.</p>
+  <div class="posts" id="postlist"></div>
+</div></section>
+
+<section class="band alt" id="certifications"><div class="wrap">
+  <div class="kick">Certifications</div>
+  <h2>Certified <em>learning</em></h2>
+  <p class="lead">Courses and credentials across networking, security, programming and AI.</p>
+  <div class="certs" id="certs"></div>
+</div></section>
+
+<section class="band" id="education"><div class="wrap">
+  <div class="kick">Education</div>
+  <h2>The journey <em>so far</em></h2>
+  <p class="lead">My academic foundation.</p>
+  <div class="edu">
+    <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+    <div><h3>B.Tech, Computer Science &amp; Engineering (Networks)</h3><p>Kakatiya Institute of Technology and Science, Warangal · Class of 2026</p></div>
+    <div class="gpa"><strong>8.04</strong><small>CGPA</small></div>
+  </div>
+</div></section>
+
+<section class="band alt contact" id="contact"><div class="wrap">
+  <div class="kick">Contact</div>
+  <h2>Let's build something <em>together.</em></h2>
+  <p class="lead">I'm open to software developer roles and collaborations. Reach me by email or LinkedIn, or grab my resume.</p>
+  <div class="btns">
+    <a class="btn solid" href="mailto:vudutanaboinajasmitha@gmail.com">Email me</a>
+    <a class="btn resume-link" href="#contact">Download resume</a>
+    <a class="btn" href="https://www.linkedin.com/in/vuduthanaboina-jasmitha-987029300/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Jasmitha53" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <span class="mail">vudutanaboinajasmitha@gmail.com</span>
+</div></section>
+
+<footer><span>© 2026 Vuduthanaboina Jasmitha</span><span>Designed &amp; built with care</span></footer>
+
+<script>
+{
+const LI='https://www.linkedin.com/feed/update/urn:li:activity:';
+const GH='https://github.com/Jasmitha53/';
+const RESUME=''; // set to the resume file path when added
+if(RESUME)document.querySelectorAll('.resume-link').forEach(a=>{a.href=RESUME;a.target='_blank';a.rel='noopener'});
+
+const tools=[['TypeScript'],['JavaScript'],['React.js'],['Node.js'],['Python'],['FastAPI'],['MySQL'],['HTML & CSS'],['REST APIs'],['Office.js','Outlook add-ins'],['Webpack'],['Scikit-learn'],['Pandas'],['Git & GitHub'],['Cisco Packet Tracer'],['Networking','CCNA']];
+document.getElementById('tools').innerHTML=tools.map(([t,s])=>`<span class="tool">${t}${s?`<small>${s}</small>`:''}</span>`).join('');
+
+const jobs=[
+ {w:'May 2026 · Hyderabad, on-site',t:'Associate Software Engineer Intern',o:'CodeplixAI (formerly S3Connections)',p:['Built an Outlook task-pane add-in that lets recruiters create job openings straight from their inbox, integrated with the company\'s recruitment platform.','Auto-filled fields from the open email\'s subject using Microsoft Office.js, with required-field validation and dropdown handling.','Implemented login, session restore, token handling and refresh-token retry, with REST API calls organised into reusable service modules.','Configured Webpack for bundling, the dev server and HTTPS proxying to the backend.'],l:LI+'7506315301765058561',lt:'Read my LinkedIn post about this'},
+ {w:'May 2025 – Jun 2025',t:'Full Stack Engineer Intern',o:'Kakatiya Institute of Technology and Science · SSIP with C-i²RE',p:['Built RESTful APIs and responsive React interfaces for campus-management modules.','Designed and managed MySQL databases for data integrity and performance.','Developed a full-stack clothing e-commerce website as the program project, and handled testing and debugging.'],l:LI+'7372896768528711681',lt:'Read my LinkedIn post'},
+ {w:'Jun 2025 – Jul 2025 · Remote',t:'Artificial Intelligence Intern',o:'Edunet Foundation × AICTE × IBM SkillsBuild',p:['Six-week program covering predictive modelling, pattern recognition, NLP and responsible AI, with hands-on project work.']}
+];
+document.getElementById('jobs').innerHTML=jobs.map(j=>`<article class="job"><div class="when">${j.w}</div><h3>${j.t}</h3><div class="org">${j.o}</div><ul>${j.p.map(x=>`<li>${x}</li>`).join('')}</ul>${j.l?`<a class="more" href="${j.l}" target="_blank" rel="noopener">${j.lt} →</a>`:''}</article>`).join('');
+
+const projects=[
+ {n:'Outlook Add-in for Recruitment',k:'Internship project · CodeplixAI',d:'An Outlook task-pane add-in that captures job-opening details from emails and submits them to a recruitment platform, so recruiters skip manual re-entry and app switching.',t:['TypeScript','Office.js','REST APIs','Webpack','Auth & sessions'],l:LI+'7506315301765058561',lt:'Read the LinkedIn post',w:1},
+ {n:'Retro-Vintage App',k:'Full-stack web app',d:'A full-stack app celebrating traditional attire like sarees and half sarees, showcasing timeless fashion and cultural heritage.',t:['React.js','Node.js','MySQL'],l:GH+'retro-vintage-app',lt:'View on GitHub'},
+ {n:'Salary Prediction',k:'Machine learning',d:'Predicts employee salaries from job title, experience and education with a Random Forest model.',t:['Python','Scikit-learn','Random Forest'],l:GH+'salary-prediction',lt:'View on GitHub'},
+ {n:'Amazon Product Scraper',k:'Data extraction',d:'An automated scraper that extracts Amazon product data by parsing HTML with Beautiful Soup and Requests.',t:['Python','Beautiful Soup','Requests'],l:GH+'Amazon-Web-Scraping-Web-Scraping-Data-Extraction-',lt:'View on GitHub'},
+ {n:'Back-Pressure Routing with CNN',k:'Networks + deep learning',d:'Back-pressure routing with a shortest-path bias, using a convolutional neural network to bring together networking and machine learning.',t:['Python','CNN','Networking'],l:GH+'Back-Pressure-Routing-with-shortest-path-bias-using-cnn',lt:'View on GitHub'}
+];
+document.getElementById('projects').innerHTML=projects.map(p=>`<article class="proj${p.w?' wide':''}"><span class="k">${p.k}</span><h3>${p.n}</h3><p>${p.d}</p><div class="chips">${p.t.map(x=>`<span class="chip">${x}</span>`).join('')}</div><a class="go" href="${p.l}" target="_blank" rel="noopener">${p.lt} →</a></article>`).join('');
+
+const liIcon='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>';
+const posts=[
+ {t:'Outlook Add-in Integration: frontend development & API integration',d:'How I built an Outlook add-in for a recruitment platform: auto-filling job details from emails, authentication with token refresh, and modular API services.',u:'7506315301765058561'},
+ {t:'Full Stack Development internship (SSIP) completed',d:'Four weeks of industry-oriented training in React, Node.js and MySQL at KITS with C-i²RE, ending with a full-stack clothing e-commerce project.',u:'7372896768528711681'},
+ {t:'Earned my Cisco CCNA certification',d:'Completed all three CCNA courses through the Cisco Networking Academy at KITS Warangal: networks, switching and routing, and enterprise security and automation.',u:'7341329043570548736'}
+];
+document.getElementById('postlist').innerHTML=posts.map(p=>`<article class="post"><div class="hd"><span class="cbox"><img class="crop" src="WhatsApp%20Image%202026-11-21%20at%205.47.22%20PM.jpeg" alt="" style="width:300%;left:-92.19%;top:-104.69%"></span><div><strong>Vuduthanaboina Jasmitha</strong><small>Software Engineer · LinkedIn</small></div></div><h3>${p.t}</h3><p>${p.d}</p><a class="li" href="${LI+p.u}" target="_blank" rel="noopener">${liIcon}Read on LinkedIn</a></article>`).join('');
+
+const certs=[['Cisco','CCNA: Introduction to Networks, SRWE & ENSA'],['Cisco','Junior Cybersecurity Analyst Career Path'],['IBM SkillsBuild','Artificial Intelligence Fundamentals'],['Deloitte Australia · Forage','Cyber Job Simulation'],['Cisco','Python Essentials 1 & 2'],['Cisco','Cybersecurity Essentials'],['Cisco','Introduction to Packet Tracer'],['KITS × C-i²RE','Full Stack Development (React, Node.js, MySQL)']];
+document.getElementById('certs').innerHTML=certs.map(([i,n])=>`<div class="cert"><small>${i}</small><h3>${n}</h3></div>`).join('');
+}
+</script>
+</body>
+</html>
